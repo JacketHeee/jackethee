@@ -22,7 +22,7 @@ export default function HomePage() {
           transition={{ delay: 0.2 }}
           className="text-6xl md:text-9xl font-black leading-tight tracking-tighter"
         >
-          {/* MẠNH <br /> NGUYỄN. */}
+          MẠNH <br /> NGUYỄN.
         </motion.h1>
         <p className="mt-8 max-w-md text-gray-400 text-lg">
           Chuyên tâm xây dựng các trải nghiệm kỹ thuật số hiện đại, tập trung

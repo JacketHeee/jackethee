@@ -1,35 +1,42 @@
-import { Form, KanbanSquare, Menu, Search } from 'lucide-react'
+import { Form, KanbanSquare, Menu, Pyramid, Search } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export default function Sidebar() {
   const [isExpandSidebar, setIsExpandSidebar] = useState(false)
+  const { t } = useTranslation()
 
   const links = [
     {
       path: 'https://jackethee.jp.larksuite.com/',
-      label: 'Tài liệu',
+      label: t('sidebar.docs'),
       icon: <Form size={20} />,
     },
     {
       path: 'https://jackethee.atlassian.net/',
-      label: 'Quản lý task',
+      label: t('sidebar.tasks'),
       icon: <KanbanSquare size={20} />, // Bạn có thể đổi icon tùy ý
+    },
+    {
+      path: 'https://jackethee.sentry.io/',
+      label: t('sidebar.sentry'),
+      icon: <Pyramid size={20} />, // Bạn có thể đổi icon tùy ý
     },
   ]
   return (
     <div
-      className={`h-full bg-[#1e1e1ee5] text-white flex flex-col transition-all duration-300 ease-in-out ${
+      className={`h-full border-r border-main-border bg-main-bg text-main-text flex flex-col transition-[width] duration-300 ease-in-out ${
         isExpandSidebar ? 'w-75' : 'w-14'
       }`}
     >
       <div
-        className={`px-4 py-4 border-b border-[#2b2b2be5] flex ${isExpandSidebar ? 'justify-between' : 'justify-center'}`}
+        className={`px-4 py-4 border-b border-main-border flex ${isExpandSidebar ? 'justify-between' : 'justify-center'}`}
       >
         <button
           type="button"
           onClick={() => setIsExpandSidebar(!isExpandSidebar)}
-          className="p-2 hover:bg-[#2b2b2be5] rounded-md cursor-pointer block"
+          className="p-2 hover:bg-main-text/10 rounded-md cursor-pointer block"
         >
           <Menu size={20} />
         </button>
@@ -38,7 +45,7 @@ export default function Sidebar() {
           <button
             type="button"
             onClick={() => setIsExpandSidebar(!isExpandSidebar)}
-            className="p-2 hover:bg-[#2b2b2be5] rounded-md cursor-pointer block"
+            className="p-2 hover:bg-main-text/10 rounded-md cursor-pointer block"
           >
             <Search size={20} />
           </button>
@@ -52,7 +59,7 @@ export default function Sidebar() {
               target="_blank"
               rel="noopener noreferrer"
               to={link.path}
-              className="py-2 px-4 flex gap-2 rounded-md items-center hover:bg-[#2b2b2be5] text-white transition-colors duration-200"
+              className="py-2 px-4 flex gap-2 rounded-md items-center hover:bg-main-text/10 text-body-2 transition-colors duration-200"
             >
               {link.icon}
               <span className="whitespace-nowrap">{link.label}</span>

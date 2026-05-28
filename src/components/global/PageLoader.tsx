@@ -24,28 +24,24 @@ export const PageLoader = () => {
         y: '-100%',
         transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
       }}
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#0a0a0a] text-white"
+      className="dark fixed inset-0 z-50 flex flex-col items-center justify-center bg-main-bg text-main-text"
     >
       <div className="relative overflow-hidden">
         {/* Chữ JF - Thương hiệu cá nhân của bạn */}
-        <motion.h1
-          initial={{ y: 100 }}
-          animate={{ y: 0 }}
-          className="text-8xl font-black tracking-tighter md:text-[12rem]"
-        >
+        <motion.h1 initial={{ y: 100 }} animate={{ y: 0 }} className="text-h1">
           JF
         </motion.h1>
       </div>
 
       <div className="mt-4 flex flex-col items-center gap-2">
-        <div className="h-0.5 w-48 bg-white/10">
+        <div className="h-0.5 w-48 bg-main-border">
           <motion.div
-            className="h-full bg-white"
+            className="h-full bg-main-text"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
           />
         </div>
-        <span className="font-mono text-sm uppercase tracking-widest opacity-50">
+        <span className="text-overline text-main-text/60">
           Initializing Experience {progress}%
         </span>
       </div>

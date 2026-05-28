@@ -9,7 +9,7 @@ import { Suspense } from 'react'
 
 const StudioPage = () => {
   return (
-    <div className="h-screen w-full bg-[#0a0a0a]">
+    <div className="dark h-screen w-full bg-main-bg">
       <Canvas shadows camera={{ position: [0, 0, 5], fov: 45 }}>
         <ambientLight intensity={0.5} />
         <spotLight
@@ -42,7 +42,7 @@ const StudioPage = () => {
                 <mesh castShadow receiveShadow>
                   <sphereGeometry args={[1, 64, 64]} />
                   <MeshDistortMaterial
-                    color="#3b82f6"
+                    color="#f9fafb"
                     speed={5}
                     distort={0.4}
                     radius={1}
@@ -56,7 +56,7 @@ const StudioPage = () => {
         {/* Nền */}
         <mesh position={[0, 0, -2]}>
           <planeGeometry args={[50, 50]} />
-          <meshBasicMaterial color="#050505" />
+          <meshBasicMaterial color="#111827" />
         </mesh>
       </Canvas>
     </div>

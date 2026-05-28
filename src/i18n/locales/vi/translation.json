@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "map": "Bản đồ",
+    "studio": "Studio 3D"
+  },
+  "home": {
+    "role": "Kỹ sư Frontend Junior",
+    "name": "Mạnh Nguyễn.",
+    "tagline": "Chuyên tâm xây dựng các trải nghiệm kỹ thuật số hiện đại, tập trung vào hiệu suất và sự tinh tế trong từng dòng code.",
+    "links": {
+      "social": "Mạng xã hội",
+      "ecommerce": "Thương mại điện tử",
+      "examhub": "Examhub",
+      "pos": "POS"
+    },
+    "buttons": {
+      "toast": "Hiện toast",
+      "loading": "Hiện loading",
+      "error": "Thử lỗi",
+      "sentry": "Thử Sentry"
+    },
+    "toastReady": "Toast đã sẵn sàng",
+    "loadingData": "Đang tải dữ liệu...",
+    "loadingDone": "Xong rồi",
+    "errorDemo": "Đã xảy ra lỗi",
+    "sentryDemo": "Lỗi kiểm thử Sentry React"
+  },
+  "map": {
+    "markers": {
+      "hanoi": {
+        "title": "Hà Nội",
+        "description": "Thủ đô Việt Nam - Thành phố ngàn năm văn hiến"
+      },
+      "hcm": {
+        "title": "TP. Hồ Chí Minh",
+        "description": "Thành phố lớn nhất Việt Nam"
+      },
+      "danang": {
+        "title": "Đà Nẵng",
+        "description": "Thành phố biển xinh đẹp của Việt Nam"
+      }
+    }
+  },
+  "errorPage": {
+    "title": "Có lỗi xảy ra",
+    "message": "{{errorMessage}}. Vui lòng thử lại hoặc quay về trang chủ.",
+    "goHome": "Về trang chủ",
+    "openMap": "Mở bản đồ"
+  },
+  "notFound": {
+    "title": "Không tìm thấy trang",
+    "message": "Trang bạn tìm không tồn tại.",
+    "goHome": "Về trang chủ",
+    "openStudio": "Mở studio"
+  },
+  "sidebar": {
+    "docs": "Tài liệu",
+    "tasks": "Quản lý công việc",
+    "sentry": "Sentry"
+  },
+  "language": {
+    "en": "EN",
+    "vi": "VI"
+  }
+}

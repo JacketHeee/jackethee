@@ -1,143 +1,121 @@
+/* 1. Khai báo Tailwind chính */
 @import 'tailwindcss';
 
+/* ==========================================
+   2. ĐỊNH NGHĨA BIẾN THỂ & DESIGN SYSTEM
+   ========================================== */
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-main-text: var(--text-color);
+  --color-main-bg: var(--bg-color);
+  --color-main-border: var(--border-color);
+}
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  --text-color: #1a1a1a;
+  --bg-color: #ffffff;
+  --border-color: #e5e7eb;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+.dark {
+  --text-color: #f9fafb;
+  --bg-color: #111827;
+  --border-color: #374151;
 }
 
 body {
-  margin: 0;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+/* ==========================================
+   3. DANH SÁCH CUSTOM UTILITIES (TYPOGRAPHY)
+   Để trực tiếp ở ngoài cùng, KHÔNG bọc trong @layer
+   ========================================== */
+@utility text-h1 {
+  @apply text-[96px] font-medium leading-[112.03px] tracking-[-1.5px] normal-case;
 }
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+@utility text-h2 {
+  @apply text-[60px] font-medium leading-[72px] tracking-[-0.5px] normal-case;
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+@utility text-h3 {
+  @apply text-[48px] font-bold leading-[56px] tracking-[0px] normal-case;
 }
-p {
-  margin: 0;
+@utility text-h4 {
+  @apply text-[36px] font-bold leading-[44px] tracking-[0.25px] normal-case;
 }
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+@utility text-h5 {
+  @apply text-[24px] font-bold leading-[32px] tracking-[0.15px] normal-case;
 }
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+@utility text-h6 {
+  @apply text-[20px] font-medium leading-[32px] tracking-[0.15px] normal-case;
 }
-
-@layer base {
-  /* width */
-  ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-
-  /* track */
-  ::-webkit-scrollbar-track {
-    /* background: transparent; */
-  }
-
-  /* thumb */
-  ::-webkit-scrollbar-thumb {
-    background: #fff7c0;
-    border-radius: 999px;
-  }
-
-  /* hover */
-  ::-webkit-scrollbar-thumb:hover {
-    /* background: var(--color-primary-main); */
-  }
-
-  .flex-bet-center {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+@utility text-body-1 {
+  @apply text-[16px] font-normal leading-[24px] tracking-[0.15px] normal-case;
+}
+@utility text-body-1-semibold {
+  @apply text-[16px] font-semibold leading-[24px] tracking-[0.15px] normal-case;
+}
+@utility text-body-2 {
+  @apply text-[14px] font-normal leading-[20px] tracking-[0.15px] normal-case;
+}
+@utility text-body-2-semibold {
+  @apply text-[14px] font-semibold leading-[20px] tracking-[0.15px] normal-case;
+}
+@utility text-subtitle-1 {
+  @apply text-[16px] font-normal leading-[175%] tracking-[0.15px] normal-case;
+}
+@utility text-subtitle-2 {
+  @apply text-[14px] font-medium leading-[157%] tracking-[0.1px] normal-case;
+}
+@utility text-overline {
+  @apply text-[12px] font-normal leading-[15px] tracking-[1px] uppercase;
+}
+@utility text-caption {
+  @apply text-[12px] font-normal leading-[15px] tracking-[0.4px] normal-case;
+}
+@utility text-toast {
+  @apply text-[16px] font-normal leading-[21px] tracking-[0.14px] normal-case;
+}
+@utility text-button-large {
+  @apply text-[15px] font-medium leading-[26px] tracking-[0.46px] normal-case;
+}
+@utility text-button-medium {
+  @apply text-[14px] font-medium leading-[24px] tracking-[0.4px] normal-case;
+}
+@utility text-button-medium-capitalize {
+  @apply text-[14px] font-medium leading-[24px] tracking-[0.4px] capitalize;
+}
+@utility text-button-small {
+  @apply text-[13px] font-medium leading-[22px] tracking-[0.46px] normal-case;
+}
+@utility text-input-label {
+  @apply text-[12px] font-normal leading-[12px] tracking-[0.15px] normal-case;
+}
+@utility text-helper-text {
+  @apply text-[12px] font-normal leading-[20px] tracking-[0.4px] normal-case;
+}
+@utility text-input-text {
+  @apply text-[16px] font-normal leading-[24px] tracking-[0.15px] normal-case;
+}
+@utility text-avatar-initials {
+  @apply text-[18px] font-normal leading-[20px] tracking-[0.14px] normal-case;
+}
+@utility text-chip {
+  @apply text-[13px] font-normal leading-[18px] tracking-[0.16px] normal-case;
+}
+@utility text-tooltip {
+  @apply text-[11px] font-medium leading-[16px] tracking-[0px] normal-case;
+}
+@utility text-alert-title {
+  @apply text-[16px] font-medium leading-[150%] tracking-[0.15px] normal-case;
+}
+@utility text-table-header {
+  @apply text-[12px] font-medium leading-[24px] tracking-[0.17px] uppercase;
+}
+@utility text-badge-label {
+  @apply text-[12px] font-medium leading-[20px] tracking-[0.14px] normal-case;
 }

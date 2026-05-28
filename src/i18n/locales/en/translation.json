@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "home": "Home",
+    "map": "Map",
+    "studio": "3D Studio"
+  },
+  "home": {
+    "role": "Junior Frontend Engineer",
+    "name": "Manh Nguyen.",
+    "tagline": "Focused on building modern digital experiences, with performance and craft in every line of code.",
+    "links": {
+      "social": "Social Media",
+      "ecommerce": "E-Commerce",
+      "examhub": "Examhub",
+      "pos": "POS"
+    },
+    "buttons": {
+      "toast": "Show toast",
+      "loading": "Show loading",
+      "error": "Test error",
+      "sentry": "Test Sentry"
+    },
+    "toastReady": "Toast is ready",
+    "loadingData": "Loading data...",
+    "loadingDone": "All set",
+    "errorDemo": "Something went wrong",
+    "sentryDemo": "Sentry React test error"
+  },
+  "map": {
+    "markers": {
+      "hanoi": {
+        "title": "Hanoi",
+        "description": "Capital of Vietnam - Millennium Old City"
+      },
+      "hcm": {
+        "title": "Ho Chi Minh City",
+        "description": "Largest city in Vietnam"
+      },
+      "danang": {
+        "title": "Da Nang",
+        "description": "Beautiful coastal city in Vietnam"
+      }
+    }
+  },
+  "errorPage": {
+    "title": "Something went wrong",
+    "message": "{{errorMessage}}. Please try again or go back home.",
+    "goHome": "Go home",
+    "openMap": "Open map"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "message": "The page you are looking for does not exist.",
+    "goHome": "Go home",
+    "openStudio": "Open studio"
+  },
+  "sidebar": {
+    "docs": "Docs",
+    "tasks": "Task management",
+    "sentry": "Sentry"
+  },
+  "language": {
+    "en": "EN",
+    "vi": "VI"
+  }
+}

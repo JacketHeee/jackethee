@@ -55,8 +55,8 @@ export default function HomePage() {
           transition={{ delay: 0.2 }}
           className="text-h2 md:text-h1"
         >
-          {t('home.name').split(' ').slice(0, 1).join(' ')} <br />
-          {t('home.name').split(' ').slice(1).join(' ')}
+          {/* {t('home.name').split(' ').slice(0, 1).join(' ')} <br />
+          {t('home.name').split(' ').slice(1).join(' ')} */}
         </motion.h1>
         <p className="mt-8 max-w-md text-subtitle-1 text-main-text/70">
           {t('home.tagline')}

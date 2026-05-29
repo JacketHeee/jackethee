@@ -10,18 +10,78 @@
   --color-main-text: var(--text-color);
   --color-main-bg: var(--bg-color);
   --color-main-border: var(--border-color);
+  --color-chat-header-from: var(--chat-header-from);
+  --color-chat-header-to: var(--chat-header-to);
+  --color-chat-primary: var(--chat-primary);
+  --color-chat-primary-hover: var(--chat-primary-hover);
+  --color-chat-surface: var(--chat-surface);
+  --color-chat-surface-muted: var(--chat-surface-muted);
+  --color-chat-border: var(--chat-border);
+  --color-chat-text: var(--chat-text);
+  --color-chat-text-muted: var(--chat-text-muted);
+  --color-chat-on-primary: var(--chat-on-primary);
+  --color-chat-online: var(--chat-online);
+  --color-chat-online-ping: var(--chat-online-ping);
+  --color-chat-typing: var(--chat-typing);
+  --color-chat-disabled: var(--chat-disabled);
+  --color-chat-input-disabled: var(--chat-input-disabled);
+  --color-chat-scrollbar-track: var(--chat-scrollbar-track);
+  --color-chat-scrollbar-thumb: var(--chat-scrollbar-thumb);
+  --color-chat-scrollbar-thumb-hover: var(--chat-scrollbar-thumb-hover);
+  --color-chat-ring: var(--chat-ring);
+  --color-chat-ring-ping: var(--chat-ring-ping);
 }
 
 :root {
   --text-color: #1a1a1a;
   --bg-color: #ffffff;
   --border-color: #e5e7eb;
+  --chat-header-from: #2563eb;
+  --chat-header-to: #4f46e5;
+  --chat-primary: #2563eb;
+  --chat-primary-hover: #1d4ed8;
+  --chat-surface: #ffffff;
+  --chat-surface-muted: #f8fafc;
+  --chat-border: #e2e8f0;
+  --chat-text: #0f172a;
+  --chat-text-muted: #64748b;
+  --chat-on-primary: #ffffff;
+  --chat-online: #10b981;
+  --chat-online-ping: #34d399;
+  --chat-typing: #94a3b8;
+  --chat-disabled: #cbd5e1;
+  --chat-input-disabled: #f1f5f9;
+  --chat-scrollbar-track: #e2e8f0;
+  --chat-scrollbar-thumb: #94a3b8;
+  --chat-scrollbar-thumb-hover: #64748b;
+  --chat-ring: rgba(37, 99, 235, 0.55);
+  --chat-ring-ping: rgba(37, 99, 235, 0.45);
 }
 
 .dark {
   --text-color: #f9fafb;
   --bg-color: #111827;
   --border-color: #374151;
+  --chat-header-from: #1d4ed8;
+  --chat-header-to: #3730a3;
+  --chat-primary: #1d4ed8;
+  --chat-primary-hover: #1e40af;
+  --chat-surface: #0f172a;
+  --chat-surface-muted: #0b1220;
+  --chat-border: #1f2937;
+  --chat-text: #e2e8f0;
+  --chat-text-muted: #94a3b8;
+  --chat-on-primary: #ffffff;
+  --chat-online: #10b981;
+  --chat-online-ping: #34d399;
+  --chat-typing: #94a3b8;
+  --chat-disabled: #475569;
+  --chat-input-disabled: #111827;
+  --chat-scrollbar-track: #1f2937;
+  --chat-scrollbar-thumb: #475569;
+  --chat-scrollbar-thumb-hover: #64748b;
+  --chat-ring: rgba(29, 78, 216, 0.6);
+  --chat-ring-ping: rgba(29, 78, 216, 0.45);
 }
 
 body {
@@ -29,6 +89,69 @@ body {
     background-color 0.3s ease,
     color 0.3s ease,
     border-color 0.3s ease;
+}
+
+.chat-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--chat-scrollbar-thumb) var(--chat-scrollbar-track);
+}
+
+.chat-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: var(--chat-scrollbar-track);
+  border-radius: 999px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--chat-scrollbar-thumb);
+  border-radius: 999px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--chat-scrollbar-thumb-hover);
+}
+
+@keyframes earthquake {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  10% {
+    transform: translateX(-1px) rotate(-1deg);
+  }
+  20% {
+    transform: translateX(1px) rotate(1deg);
+  }
+  30% {
+    transform: translateX(-2px) rotate(-1.5deg);
+  }
+  40% {
+    transform: translateX(2px) rotate(1.5deg);
+  }
+  50% {
+    transform: translateX(-1px) rotate(-0.5deg);
+  }
+  60% {
+    transform: translateX(1px) rotate(0.5deg);
+  }
+  70% {
+    transform: translateX(-1px) rotate(-0.5deg);
+  }
+  80% {
+    transform: translateX(1px) rotate(0.5deg);
+  }
+  90% {
+    transform: translateX(-0.5px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.earthquake {
+  animation: earthquake 0.6s ease-in-out infinite;
 }
 
 /* ==========================================

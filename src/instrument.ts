@@ -8,9 +8,7 @@ import {
 import { useEffect } from 'react'
 
 Sentry.init({
-  dsn:
-    import.meta.env.VITE_SENTRY_DSN ??
-    'https://4852b04e97c63e1bd46a0e4c82ec02a7@o4511467037720576.ingest.us.sentry.io/4511467048665088',
+  dsn: import.meta.env.VITE_SENTRY_DSN,
   environment: import.meta.env.MODE,
   integrations: [
     Sentry.reactRouterV7BrowserTracingIntegration({

@@ -1,4 +1,4 @@
-import { Form, KanbanSquare, Menu, Pyramid, Search } from 'lucide-react'
+import { Form, KanbanSquare, Menu, Pyramid, Search, Snail } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
@@ -22,6 +22,11 @@ export default function Sidebar() {
       path: 'https://jackethee.sentry.io/',
       label: t('sidebar.sentry'),
       icon: <Pyramid size={20} />, // Bạn có thể đổi icon tùy ý
+    },
+    {
+      path: 'https://webflow.com/',
+      label: t('sidebar.weblow'),
+      icon: <Snail size={20} />, // Bạn có thể đổi icon tùy ý
     },
   ]
   return (

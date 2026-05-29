@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 import { Link } from 'react-router-dom'
 import LoadingOverlay from '@/components/global/LoadingOverlay'
+import MouseInteractionSection from '@/components/atomic/organisms/MouseInteractionSection/MouseInteractionSection'
 import { useTranslation } from 'react-i18next'
 // Import các section bạn sẽ tạo dưới đây
 // import Hero from '../components/organisms/Hero';
@@ -56,7 +57,7 @@ export default function HomePage() {
           className="text-h2 md:text-h1"
         >
           {t('home.name').split(' ').slice(0, 1).join(' ')} <br />
-          {t('home.name').split(' ').slice(1).join(' ')} 
+          {t('home.name').split(' ').slice(1).join(' ')}
         </motion.h1>
         <p className="mt-8 max-w-md text-subtitle-1 text-main-text/70">
           {t('home.tagline')}
@@ -118,6 +119,7 @@ export default function HomePage() {
           </button>
         </div>
       </section>
+      <MouseInteractionSection />
     </div>
   )
 }

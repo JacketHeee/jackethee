@@ -8,7 +8,7 @@ export default function RootLayout() {
   return (
     <div className="fixed inset-0 flex">
       <Sidebar />
-      <div className="flex flex-col flex-1 relative">
+      <div className="flex flex-col flex-1 relative overflow-y-auto">
         <Header />
         <Suspense fallback={<PageLoader />}>
           <Outlet />

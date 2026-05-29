@@ -30,6 +30,14 @@
   --color-chat-scrollbar-thumb-hover: var(--chat-scrollbar-thumb-hover);
   --color-chat-ring: var(--chat-ring);
   --color-chat-ring-ping: var(--chat-ring-ping);
+  --color-interaction-bg: var(--interaction-bg);
+  --color-interaction-surface: var(--interaction-surface);
+  --color-interaction-border: var(--interaction-border);
+  --color-interaction-accent: var(--interaction-accent);
+  --color-interaction-on-accent: var(--interaction-on-accent);
+  --color-interaction-eye: var(--interaction-eye);
+  --color-interaction-pupil: var(--interaction-pupil);
+  --color-interaction-shadow: var(--interaction-shadow);
 }
 
 :root {
@@ -56,6 +64,19 @@
   --chat-scrollbar-thumb-hover: #64748b;
   --chat-ring: rgba(37, 99, 235, 0.55);
   --chat-ring-ping: rgba(37, 99, 235, 0.45);
+  --interaction-bg: #f8fafc; /* Nền tổng của section (xám Slate siêu nhẹ) */
+  --interaction-surface: #ffffff; /* Bề mặt của vật thể chính (màu trắng để nổi bật) */
+  --interaction-border: #e2e8f0; /* Đường viền tinh tế xung quanh vật thể */
+  --interaction-accent: #2563eb; /* Màu xanh Royal làm điểm nhấn cho Button/Tương tác */
+  --interaction-on-accent: #ffffff; /* Màu chữ/icon nằm trên nền màu accent */
+  --interaction-eye: #ffffff; /* Màu lòng trắng của mắt */
+  --interaction-pupil: #0f172a; /* Màu lòng đen/con ngươi của mắt */
+  --interaction-shadow: rgba(
+    15,
+    23,
+    42,
+    0.08
+  ); /* Đổ bóng nhẹ nhàng, tự nhiên */
 }
 
 .dark {
@@ -82,6 +103,14 @@
   --chat-scrollbar-thumb-hover: #64748b;
   --chat-ring: rgba(29, 78, 216, 0.6);
   --chat-ring-ping: rgba(29, 78, 216, 0.45);
+  --interaction-bg: #020617;
+  --interaction-surface: #0f172a;
+  --interaction-border: #1e293b;
+  --interaction-accent: #38bdf8;
+  --interaction-on-accent: #0b1220;
+  --interaction-eye: #e2e8f0;
+  --interaction-pupil: #0f172a;
+  --interaction-shadow: rgba(2, 6, 23, 0.7);
 }
 
 body {
@@ -91,26 +120,26 @@ body {
     border-color 0.3s ease;
 }
 
-.chat-scrollbar {
+* {
   scrollbar-width: thin;
   scrollbar-color: var(--chat-scrollbar-thumb) var(--chat-scrollbar-track);
 }
 
-.chat-scrollbar::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 8px;
 }
 
-.chat-scrollbar::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background: var(--chat-scrollbar-track);
   border-radius: 999px;
 }
 
-.chat-scrollbar::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   background: var(--chat-scrollbar-thumb);
   border-radius: 999px;
 }
 
-.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover {
   background: var(--chat-scrollbar-thumb-hover);
 }
 

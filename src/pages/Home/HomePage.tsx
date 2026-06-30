@@ -42,11 +42,11 @@ export default function HomePage() {
     <div className="flex flex-col w-full">
       <LoadingOverlay isVisible={isLoading} label={t('home.loadingData')} />
       {/* 1. HERO SECTION: Gây ấn tượng đầu tiên với Typography lớn */}
-      <section className="dark min-h-screen flex flex-col gap-2 justify-center items-center px-10 bg-main-bg text-main-text">
+      <section className="dark min-h-screen flex flex-col gap-2 justify-center items-center px-5 py-24 sm:px-8 md:px-10 bg-main-bg text-main-text">
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-overline mb-4"
+          className="text-overline mb-4 text-center"
         >
           {t('home.role')}
         </motion.span>
@@ -54,15 +54,15 @@ export default function HomePage() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-h2 md:text-h1"
+          className="text-h4 sm:text-h3 md:text-h2 lg:text-h1 text-center"
         >
           {t('home.name').split(' ').slice(0, 1).join(' ')} <br />
           {t('home.name').split(' ').slice(1).join(' ')}
         </motion.h1>
-        <p className="mt-8 max-w-md text-subtitle-1 text-main-text/70">
+        <p className="mt-6 sm:mt-8 max-w-md text-subtitle-1 text-main-text/70 text-center px-2">
           {t('home.tagline')}
         </p>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap justify-center gap-2">
           <Link
             to={'https://interact-hub.jackethee.dev/'}
             className="px-2 py-1 rounded-md border border-main-border text-body-2"
@@ -88,7 +88,7 @@ export default function HomePage() {
             {t('home.links.pos')}: ANSODUHOVIMA
           </Link>
         </div>
-        <div className="mt-8 flex flex-wrap items-center gap-3">
+        <div className="mt-6 sm:mt-8 flex flex-wrap justify-center items-center gap-3">
           <button
             type="button"
             onClick={handleToastDemo}

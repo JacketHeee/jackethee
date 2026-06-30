@@ -34,10 +34,10 @@ export default function SearchLocation({
   }
 
   return (
-    <div className="pointer-events-auto w-full max-w-md">
-      <div className="group relative flex items-center bg-white rounded-xl border border-slate-200 shadow-sm focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-500/10 transition-all duration-300">
+    <div className="pointer-events-auto w-full max-w-md mt-9.5">
+      <div className="group relative flex items-center bg-map-surface rounded-xl border border-map-border shadow-sm focus-within:border-map-primary focus-within:ring-4 focus-within:ring-map-primary/10 transition-all duration-300">
         {/* Icon Search - Sử dụng Lucide */}
-        <div className="pl-4 pr-2 text-slate-400 group-focus-within:text-blue-500 transition-colors">
+        <div className="pl-4 pr-2  text-map-text-muted group-focus-within:text-map-primary transition-colors">
           {loading ? (
             <Loader size={18} className="animate-spin" />
           ) : (
@@ -55,7 +55,7 @@ export default function SearchLocation({
             setShowSuggestions(true)
           }}
           onFocus={() => setShowSuggestions(true)}
-          className="flex-1 py-3.5 pr-2 outline-none text-sm text-slate-700 placeholder-slate-400 bg-transparent"
+          className="flex-1 py-3.5 pr-2 outline-none text-sm text-map-text placeholder-map-text-muted bg-transparent"
         />
 
         {/* Clear Button */}
@@ -63,7 +63,7 @@ export default function SearchLocation({
           <button
             type="button"
             onClick={handleClear}
-            className="p-1.5 mr-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-all active:scale-95"
+            className="p-1.5 mr-2 text-map-text-muted hover:text-map-text hover:bg-map-surface-muted rounded-lg transition-all active:scale-95"
             aria-label="Xóa tìm kiếm"
           >
             <X size={16} strokeWidth={3} />
@@ -73,10 +73,10 @@ export default function SearchLocation({
 
       {/* Suggestions Dropdown */}
       {showSuggestions && (searchQuery.trim() || suggestions.length > 0) && (
-        <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg border border-slate-200 shadow-lg overflow-hidden z-50">
+        <div className="absolute top-full left-0 right-0 mt-1 bg-map-surface rounded-lg border border-map-border shadow-lg overflow-hidden z-50">
           {/* Loading State */}
           {loading && (
-            <div className="px-4 py-3 text-sm text-slate-500 flex items-center gap-2">
+            <div className="px-4 py-3 text-sm text-map-text-muted flex items-center gap-2">
               <Loader size={16} className="animate-spin" />
               Đang tìm kiếm...
             </div>
@@ -84,7 +84,7 @@ export default function SearchLocation({
 
           {/* Error State */}
           {error && !loading && (
-            <div className="px-4 py-3 text-sm text-red-600">{error}</div>
+            <div className="px-4 py-3 text-sm text-red-500">{error}</div>
           )}
 
           {/* Suggestions List */}
@@ -95,23 +95,23 @@ export default function SearchLocation({
                   <button
                     type="button"
                     onClick={() => handleSelectSuggestion(suggestion)}
-                    className="w-full text-left px-4 py-3 hover:bg-slate-50 transition-colors border-b border-slate-100 last:border-b-0"
+                    className="w-full text-left px-4 py-3 hover:bg-map-surface-muted transition-colors border-b border-map-border last:border-b-0"
                   >
                     <div className="flex items-start gap-3">
                       {/* Location Icon */}
                       <div className="mt-1 shrink-0">
-                        <div className="w-2 h-2 rounded-full bg-blue-500" />
+                        <div className="w-2 h-2 rounded-full bg-map-primary" />
                       </div>
                       {/* Content */}
                       <div className="flex-1 min-w-0">
-                        <div className="font-medium text-slate-900 truncate">
+                        <div className="font-medium text-map-text truncate">
                           {suggestion.name}
                         </div>
-                        <div className="text-xs text-slate-500 truncate">
+                        <div className="text-xs text-map-text-muted truncate">
                           {suggestion.place_formatted}
                         </div>
                         {suggestion.full_address && (
-                          <div className="text-xs text-slate-400 truncate mt-0.5">
+                          <div className="text-xs text-map-text-muted truncate mt-0.5">
                             {suggestion.full_address}
                           </div>
                         )}
@@ -128,7 +128,7 @@ export default function SearchLocation({
             !error &&
             suggestions.length === 0 &&
             searchQuery.trim() && (
-              <div className="px-4 py-3 text-sm text-slate-500">
+              <div className="px-4 py-3 text-sm text-map-text-muted">
                 Không tìm thấy địa điểm nào
               </div>
             )}

@@ -25,18 +25,18 @@ export default function MarkerPopup({
       anchor="bottom"
       offset={[0, -10]}
     >
-      <div className="p-4 max-w-xs">
-        <h3 className="font-semibold text-gray-900 text-sm mb-1">{title}</h3>
+      <div className="p-4 max-w-xs bg-map-surface">
+        <h3 className="font-semibold text-map-text text-sm mb-1">{title}</h3>
         {description && (
-          <p className="text-xs text-gray-600 mb-3 leading-relaxed">
+          <p className="text-xs text-map-text-muted mb-3 leading-relaxed">
             {description}
           </p>
         )}
         <div className="flex gap-2 text-xs">
-          <button className="flex-1 bg-indigo-600 text-white px-3 py-1.5 rounded text-xs font-medium hover:bg-indigo-700 transition">
+          <button className="flex-1 bg-map-primary text-map-on-primary px-3 py-1.5 rounded text-xs font-medium hover:bg-map-primary-hover transition">
             Edit
           </button>
-          <button className="flex-1 bg-gray-200 text-gray-700 px-3 py-1.5 rounded text-xs font-medium hover:bg-gray-300 transition">
+          <button className="flex-1 bg-map-surface-muted text-map-text px-3 py-1.5 rounded text-xs font-medium hover:opacity-80 transition">
             Delete
           </button>
         </div>

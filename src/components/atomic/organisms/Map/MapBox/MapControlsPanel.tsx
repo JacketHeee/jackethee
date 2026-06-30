@@ -58,7 +58,7 @@ export default function MapControlsPanel({
   }, [selectedLocation, onLocationSelected])
 
   return (
-    <div className="absolute top-4 left-4 z-10 flex flex-col gap-2 w-72 pointer-events-auto">
+    <div className="absolute top-2 left-2 right-2 sm:top-3 sm:left-4 sm:right-auto z-10 flex flex-col gap-2 w-auto sm:w-72 pointer-events-auto">
       {/* Search Box */}
       <SearchLocation
         searchQuery={query}

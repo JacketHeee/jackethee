@@ -86,21 +86,21 @@ export default function MouseInteractionSection() {
       onMouseMove={handleMouseMove}
       className="relative w-full overflow-hidden bg-interaction-bg text-main-text"
     >
-      <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-6 py-24">
+      <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-8 sm:gap-10 px-5 sm:px-6 py-16 sm:py-20 md:py-24">
         <div className="text-center space-y-3">
           <p className="text-overline text-main-text/60">
             Mouse Interaction Lab
           </p>
-          <h2 className="text-h4">Eye Tracking & State Mutation</h2>
-          <p className="text-body-1 text-main-text/70 max-w-2xl">
+          <h2 className="text-h5 sm:text-h4">Eye Tracking & State Mutation</h2>
+          <p className="text-body-2 sm:text-body-1 text-main-text/70 max-w-2xl px-2">
             The eyes follow your cursor with smooth inertia. Hover the button to
             shift emotion and watch the expression react in real time.
           </p>
         </div>
 
-        <div className="relative flex flex-col items-center gap-12">
+        <div className="relative flex flex-col items-center gap-10 sm:gap-12">
           <div
-            className={`relative flex h-96 w-96 items-center justify-center rounded-[60px] border border-interaction-border bg-interaction-surface shadow-[0_36px_120px_-50px_var(--interaction-shadow)] transition-colors ${
+            className={`relative flex h-64 w-64 sm:h-80 sm:w-80 md:h-96 md:w-96 items-center justify-center rounded-[48px] sm:rounded-[60px] border border-interaction-border bg-interaction-surface shadow-[0_36px_120px_-50px_var(--interaction-shadow)] transition-colors ${
               emotion === 'excited'
                 ? 'ring-2 ring-interaction-accent/50'
                 : 'ring-2 ring-interaction-border/60'
@@ -108,20 +108,20 @@ export default function MouseInteractionSection() {
           >
             <div className="absolute -top-12 h-20 w-48 rounded-full bg-interaction-accent/35 blur-2xl" />
             <div className="absolute -top-16 h-24 w-56 rounded-full bg-interaction-accent/20 blur-3xl" />
-            <div className="flex items-center gap-10">
+            <div className="flex items-center gap-7 sm:gap-9 md:gap-10">
               {[0, 1].map((index) => (
                 <div
                   key={`eye-${index}`}
                   className={`relative flex items-center justify-center overflow-hidden rounded-full border border-interaction-eye/60 bg-interaction-eye transition-all ${
                     emotion === 'happy'
-                      ? 'h-9 w-36'
+                      ? 'h-6 w-24 sm:h-9 sm:w-36'
                       : emotion === 'excited'
-                        ? 'h-28 w-28'
-                        : 'h-24 w-24'
+                        ? 'h-20 w-20 sm:h-28 sm:w-28'
+                        : 'h-16 w-16 sm:h-24 sm:w-24'
                   }`}
                 >
                   <div
-                    className={`absolute h-12 w-12 rounded-full bg-interaction-pupil transition-opacity ${
+                    className={`absolute h-9 w-9 sm:h-12 sm:w-12 rounded-full bg-interaction-pupil transition-opacity ${
                       emotion === 'happy' ? 'opacity-0' : 'opacity-100'
                     }`}
                     style={{
@@ -129,7 +129,7 @@ export default function MouseInteractionSection() {
                     }}
                   />
                   {emotion === 'happy' && (
-                    <div className="h-5 w-28 rounded-full bg-interaction-pupil/70" />
+                    <div className="h-4 w-20 sm:h-5 sm:w-28 rounded-full bg-interaction-pupil/70" />
                   )}
                 </div>
               ))}

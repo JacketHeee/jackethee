@@ -1,4 +1,12 @@
 import { useState } from 'react'
+import {
+  Map as MapIcon,
+  Milestone,
+  Mountain,
+  Satellite,
+  Sun,
+  Moon,
+} from 'lucide-react'
 import { MAP_STYLES } from './constants'
 
 interface MapStyleButtonProps {
@@ -12,20 +20,20 @@ export default function MapStyleButton({
 }: MapStyleButtonProps) {
   const [isOpen, setIsOpen] = useState(false)
 
-  const getStyleThumbnail = (style: string) => {
+  const getStyleIcon = (style: string, className: string) => {
     switch (style) {
       case MAP_STYLES.streets.url:
-        return '🛣️'
+        return <Milestone className={className} />
       case MAP_STYLES.outdoors.url:
-        return '🏞️'
+        return <Mountain className={className} />
       case MAP_STYLES.light.url:
-        return '☀️'
+        return <Sun className={className} />
       case MAP_STYLES.dark.url:
-        return '🌙'
+        return <Moon className={className} />
       case MAP_STYLES.satellite.url:
-        return '🛰️'
+        return <Satellite className={className} />
       default:
-        return '🗺️'
+        return <MapIcon className={className} />
     }
   }
 
@@ -37,7 +45,7 @@ export default function MapStyleButton({
   }
 
   return (
-    <div className="absolute bottom-4 left-4 z-10">
+    <div className="absolute bottom-10 left-2 sm:bottom-4 sm:left-4 z-10">
       {/* Main Button */}
       <div
         className="relative"
@@ -46,18 +54,18 @@ export default function MapStyleButton({
       >
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-12 h-12 bg-white rounded-lg shadow-sm border border-gray-200 flex items-center justify-center hover:shadow-md hover:border-gray-300 transition"
+          className="w-12 h-12 bg-map-surface rounded-lg shadow-sm border border-map-border flex items-center justify-center hover:shadow-md transition"
           title={getCurrentStyleName()}
         >
-          <span className="text-xl">{getStyleThumbnail(currentStyle)}</span>
+          {getStyleIcon(currentStyle, 'w-5 h-5 text-map-text')}
         </button>
 
         {/* Styles Menu */}
         {isOpen && (
-          <div className="absolute bottom-16 left-0 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden w-56">
+          <div className="absolute bottom-16 left-0 bg-map-surface rounded-lg shadow-lg border border-map-border overflow-hidden w-56">
             {/* Header */}
-            <div className="px-4 py-3 border-b border-gray-200 bg-gray-50">
-              <h3 className="text-xs font-semibold text-gray-700 uppercase tracking-wide">
+            <div className="px-4 py-3 border-b border-map-border bg-map-surface-muted">
+              <h3 className="text-xs font-semibold text-map-text-muted uppercase tracking-wide">
                 Map Styles
               </h3>
             </div>
@@ -73,12 +81,12 @@ export default function MapStyleButton({
                   }}
                   className={`p-3 rounded text-center text-xs font-medium transition ${
                     currentStyle === style.url
-                      ? 'bg-indigo-100 border border-indigo-300 text-indigo-700'
-                      : 'bg-gray-50 border border-gray-200 text-gray-700 hover:bg-gray-100 hover:border-gray-300'
+                      ? 'bg-map-accent-surface border border-map-accent-border text-map-accent-text'
+                      : 'bg-map-surface-muted border border-map-border text-map-text hover:opacity-80'
                   }`}
                 >
-                  <div className="text-lg mb-1">
-                    {getStyleThumbnail(style.url)}
+                  <div className="flex justify-center mb-1">
+                    {getStyleIcon(style.url, 'w-5 h-5')}
                   </div>
                   <div>{style.name}</div>
                 </button>
@@ -86,7 +94,7 @@ export default function MapStyleButton({
             </div>
 
             {/* Arrow Pointer */}
-            <div className="absolute bottom-0 right-4 w-2 h-2 bg-white border-r border-b border-gray-200 rotate-45 transform translate-y-full" />
+            <div className="absolute bottom-0 right-4 w-2 h-2 bg-map-surface border-r border-b border-map-border rotate-45 transform translate-y-full" />
           </div>
         )}
       </div>

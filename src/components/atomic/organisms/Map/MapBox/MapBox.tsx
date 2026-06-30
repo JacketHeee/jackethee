@@ -7,6 +7,7 @@ import Map, {
   ScaleControl,
 } from 'react-map-gl/mapbox'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import { MapPin } from 'lucide-react'
 import MapControlsPanel from './MapControlsPanel'
 import MapStyleButton from './MapStyleButton'
 import MarkerPopup from './MarkerPopup'
@@ -158,8 +159,8 @@ export default function MapBox({
               }
               onClick={() => handleMarkerClick(marker.id)}
             >
-              <div className="cursor-pointer text-2xl" title={marker.title}>
-                📍
+              <div className="cursor-pointer" title={marker.title}>
+                <MapPin className="w-7 h-7 fill-current" />
               </div>
             </Marker>
           ))}
@@ -172,8 +173,8 @@ export default function MapBox({
             color="hsl(220, 100%, 50%)"
             onClick={() => setSearchMarker(null)}
           >
-            <div className="cursor-pointer text-2xl" title={searchMarker.name}>
-              📍
+            <div className="cursor-pointer" title={searchMarker.name}>
+              <MapPin className="w-7 h-7 fill-current" />
             </div>
           </Marker>
         )}
@@ -203,14 +204,14 @@ export default function MapBox({
 
       {/* Drawing Mode Indicator */}
       {drawingMode !== 'none' && (
-        <div className="absolute top-4 right-4 bg-indigo-600 text-white px-3 py-2 rounded-lg shadow-sm text-xs font-medium">
+        <div className="absolute top-4 right-4 bg-map-primary text-map-on-primary px-3 py-2 rounded-lg shadow-sm text-xs font-medium">
           Drawing Mode: {drawingMode.toUpperCase()}
         </div>
       )}
 
       {/* Search Results Indicator */}
       {searchQuery && (
-        <div className="absolute bottom-4 right-4 bg-indigo-600 text-white px-3 py-2 rounded-lg shadow-sm text-xs font-medium">
+        <div className="absolute bottom-4 right-4 bg-map-primary text-map-on-primary px-3 py-2 rounded-lg shadow-sm text-xs font-medium">
           {
             markers.filter((m) =>
               m.title?.toLowerCase().includes(searchQuery.toLowerCase()),

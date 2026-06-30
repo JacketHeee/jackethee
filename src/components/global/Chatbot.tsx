@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { KeyboardEvent } from 'react'
 import ReactMarkdown from 'react-markdown'
 import type { Components } from 'react-markdown'
-import { MessageCircle } from 'lucide-react'
+import { MessageCircle, X } from 'lucide-react'
 import Button from '@/components/atomic/atoms/Button/Button'
 import Input from '@/components/atomic/atoms/Input/Input'
 import Label from '@/components/atomic/atoms/Label/Label'
@@ -143,9 +143,9 @@ export default function Chatbot() {
   const chatInputId = 'chatbot-input'
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3">
       <div
-        className={`w-80 sm:w-96 h-137.5 bg-chat-surface rounded-2xl shadow-2xl border border-chat-border overflow-hidden flex flex-col transition-all duration-300 ${
+        className={`w-[calc(100vw-2rem)] max-w-80 sm:max-w-96 h-[min(70vh,550px)] bg-chat-surface rounded-2xl shadow-2xl border border-chat-border overflow-hidden flex flex-col transition-all duration-300 ${
           isOpen
             ? 'opacity-100 translate-y-0 scale-100'
             : 'opacity-0 pointer-events-none translate-y-4 scale-95'
@@ -166,7 +166,7 @@ export default function Chatbot() {
             className="rounded-full p-1 hover:bg-white/20 text-chat-on-primary"
             aria-label="Đóng cửa sổ chat"
           >
-            ✕
+            <X className="h-5 w-5" />
           </Button>
         </div>
 

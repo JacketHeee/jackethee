@@ -34,7 +34,7 @@ export default function SearchLocation({
   }
 
   return (
-    <div className="pointer-events-auto w-full max-w-md mt-9.5">
+    <div className="pointer-events-auto w-full max-w-md mt-9.5 sm:mt-0">
       <div className="group relative flex items-center bg-map-surface rounded-xl border border-map-border shadow-sm focus-within:border-map-primary focus-within:ring-4 focus-within:ring-map-primary/10 transition-all duration-300">
         {/* Icon Search - Sử dụng Lucide */}
         <div className="pl-4 pr-2  text-map-text-muted group-focus-within:text-map-primary transition-colors">

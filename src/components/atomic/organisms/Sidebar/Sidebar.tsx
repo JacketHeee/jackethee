@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next'
 
 export default function Sidebar() {
   // Trạng thái mở rộng cho desktop rail
-  const [isExpandSidebar, setIsExpandSidebar] = useState(false)
+  const [isExpandSidebar, setIsExpandSidebar] = useState(true)
   // Trạng thái mở drawer cho mobile
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   const { t } = useTranslation()

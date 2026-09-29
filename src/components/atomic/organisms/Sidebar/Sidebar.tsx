@@ -1,4 +1,5 @@
 import {
+  AudioLines,
   Form,
   KanbanSquare,
   Menu,
@@ -23,6 +24,11 @@ export default function Sidebar() {
       path: 'https://jackethee.jp.larksuite.com/',
       label: t('sidebar.docs'),
       icon: <Form size={20} />,
+    },
+    {
+      path: 'https://drive.google.com/drive/u/0/folders/1A2BWtDg7aXqgvwREhBnkI7rHMdqv-AgK',
+      label: t('sidebar.recordings', 'Recordings'),
+      icon: <AudioLines size={20} />,
     },
     {
       path: 'https://jackethee.atlassian.net/',
